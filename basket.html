@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="Stylesheet" href="CSS/basketStyle.css" />
+
+    <title>Basket</title>
+  </head>
+  <body>
+    <div class="Cart-Container row">
+      <div class="Header">
+        <h3 class="Heading">Shopping Cart</h3>
+        <h5 class="Action">Remove all</h5>
+      </div>
+
+      <div class="Cart-Items col-md-6 col-lg-4 col-xl-3">
+        <div class="image-box">
+          <img
+            src="RES/sesderma-azelac-ru-liposomal-serum-30ml.jpg"
+            height="100px"
+            width="100px"
+          />
+        </div>
+        <div class="about">
+          <h1 class="title">SESDERMA AZELAC RU LIPOSOMAL SERUM</h1>
+          <h3 class="subtitle">30ml</h3>
+        </div>
+        <div class="counter">
+          <div class="btn">+</div>
+          <div class="count">1</div>
+          <div class="btn">-</div>
+        </div>
+        <div class="prices">
+          <div><span class="price">80.182</span><span>DT  </span></div>
+          <div class="remove"><u>Remove</u></div>
+        </div>
+      </div>
+
+      <div class="Cart-Items col-md-6 col-lg-4 col-xl-3">
+        <div class="image-box">
+          <img
+            src="RES/svr-sebiaclear-micro-peel-150ml.jpg"
+            height="100px"
+            width="100px"
+          />
+        </div>
+        <div class="about">
+          <h1 class="title">SVR SEBIACLEAR MICRO-PEEL</h1>
+          <h3 class="subtitle">150ml</h3>
+        </div>
+        <div class="counter">
+          <div class="btn">+</div>
+          <div class="count">1</div>
+          <div class="btn">-</div>
+        </div>
+        <div class="prices">
+          <div><span class="price">27.182</span> <span>DT</span></div>
+
+          <div class="remove"><u>Remove</u></div>
+        </div>
+      </div>
+
+      <div class="Cart-Items col-md-6 col-lg-4 col-xl-3">
+        <div class="image-box">
+          <img
+            src="RES/dermedic-hydrain-3-gel-creme-ultr-hydrat-50g.jpg"
+            height="100px"
+            width="100px"
+          />
+        </div>
+        <div class="about">
+          <h1 class="title">DERMEDIC HYDRAIN 3 GEL CREME ULTR-HYDRAT</h1>
+          <h3 class="subtitle">50g</h3>
+        </div>
+        <div class="counter">
+          <div class="btn">+</div>
+          <div class="count">1</div>
+          <div class="btn">-</div>
+        </div>
+        <div class="prices">
+          <div><span class="price">18.182</span> <span>DT</span></div>
+          <div class="remove"><u>Remove</u></div>
+        </div>
+      </div>
+
+      <div class="checkout total-Card col-md-12 col-lg-6 col-xl-6">
+        <div class="total">
+          <div>
+            <div class="Subtotal">Sub-Total</div>
+            <div><span class="item">2</span> items</div>
+          </div>
+
+          <div><span class="total-price">0</span> <span>DT</span></div>
+        </div>
+        <button type="button" class="btn btn-success button">Order</button>
+      </div>
+    </div>
+
+    <script src="JS/basketScript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+.container{
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 5%;
+    margin-top: 10%;
+}
+.email, .btn_login{
+    margin-bottom: 10px;
+    width: 60%;
+}
+input{
+    text-align: center;
+
+}
+.password{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+#psw{
+    width: 60%;
+}
+#showPsw{
+    width: 35%;
+    text-align: center;
+}
+
+#btn_login{
+width: 30%;
+align-content: center;
+}
+.btn{
+    box-shadow: 10px 10px 10px black;
+}
