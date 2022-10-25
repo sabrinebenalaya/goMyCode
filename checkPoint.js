@@ -46,9 +46,9 @@ function problem1_1(tab1, tab2) {
 
   for (let i = 0; i < tab3.length; i++) {
     if (!htab.hasOwnProperty(tab3[i])) {
-      htab[tab3[i]] = 0; /*not exist*/
+      htab[tab3[i]] = 0; 
     } else {
-      htab[tab3[i]] = 1;/*exsist*/
+      htab[tab3[i]] = 1;
     }
   }
   for (let k in htab) {
