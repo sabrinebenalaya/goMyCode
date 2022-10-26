@@ -192,3 +192,50 @@ function test7(t){
     return obj;
 }
 console.log ("function that return an object from a table :",test7([1,2,3,4]));
+
+console.log("*********************")
+console.log("*********************")
+function get (){
+    let t =[]
+    let i =0;
+        return Object.values(arguments)     
+}
+console.log("function that return the value of object : ", get([1,2], "e"));
+
+console.log("*********************")
+console.log("*********************")
+function delet(tab){
+    let a =[];
+    for (let key in arguments){
+        if (key!=0){
+            a.push(arguments[key])
+        }
+     
+    }
+
+   for (let i=0; i<tab.length;i++){
+        for(let j=0; j<a.length; j++){
+            if (tab[i]===a[j]){
+                tab.splice(i,1)                
+            }
+        }
+    }
+    return tab
+}
+console.log ("function that delete an arguments in the table :",delet([1,2,3,4],2,3))
+
+console.log("*********************")
+console.log("*********************")
+
+function product(v1, v2){
+    let prod = 0;
+    for (let i=0; i<v1.length; i++){
+        prod += v1[i]*v2[i];
+    }
+    return prod;
+}
+if (product([0,0,0],[1,0,2])==0){
+    console.log("ok")
+}else{
+    console.log("nok")
+}
