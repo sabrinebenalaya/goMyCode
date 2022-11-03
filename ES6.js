@@ -438,3 +438,61 @@ function basicOp(operation, value1, value2) {
   return eval(value1 + operation + value2);
 }
 console.log("basicOp = ", basicOp("-", 15, 18));
+
+console.log("*********************");
+console.log("*********************");
+/*Complete the solution so that it reverses the string passed into it.*/
+function solution(str) {
+  return str.split("").reverse().join("");
+}
+console.log("solution = ", solution("world"));
+
+console.log("*********************");
+console.log("*********************");
+/*Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).*/
+function solutionStringEnd(str, ending) {
+  //return str.substring(str.length-ending.length, str.length) == ending
+  return str.endsWith(ending);
+}
+console.log("solutionStringEnd = ", solutionStringEnd("abc", "bc"));
+
+console.log("*********************");
+console.log("*********************");
+/*Build a function that takes in two arguments (salary, bonus). Salary will be an integer, and bonus a boolean.
+
+If bonus is true, the salary should be multiplied by 10. If bonus is false, the fatcat did not make enough money and must receive only his stated salary.*/
+function bonusTime(salary, bonus) {
+  return bonus ? "£" + salary * 10 : "£" + salary;
+}
+console.log("bonusTime = ", bonusTime(10000, false));
+
+console.log("*********************");
+console.log("*********************");
+/*Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.*/
+function abbrevName(name) {
+  return name
+    .toUpperCase()
+    .split(" ")
+    .map((el) => el.substring(0, 1))
+    .join(".");
+}
+console.log("abbrevName = ", abbrevName("Sam Harris"));
+
+console.log("*********************");
+console.log("*********************");
+/*The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.*/
+
+function DNAtoRNA(dna) {
+  return dna
+    .split("")
+    .map((el) => {
+      if (el == "T") {
+        el = "U";
+        return el;
+      } else {
+        return el;
+      }
+    })
+    .join("");
+}
+console.log("DNAtoRNA = ", DNAtoRNA("CCAGAGGTT"));
