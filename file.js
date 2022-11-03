@@ -235,7 +235,30 @@ function product(v1, v2){
     return prod;
 }
 if (product([0,0,0],[1,0,2])==0){
-    console.log("ok")
+    console.log("The dot product of two orthogonal vectors is zero.")
 }else{
-    console.log("nok")
+    console.log("The dot product of two orthogonal vectors is not zero.")
 }
+
+
+console.log("*********************")
+console.log("*********************")
+function tri(tab){
+    for(let i = 0; i < tab.length; i++){
+  
+      let min = i; 
+      for(let j = i+1; j < tab.length; j++){
+        if(tab[j] < tab[i]){
+            let tmp = tab[i];
+            tab[i] = tab[j];
+            tab[j] = tmp; 
+        }
+      }
+      
+    }
+    return tab;
+  }
+console.log("function tri :", tri([0,5,-1,1]))
+
+
+
