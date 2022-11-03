@@ -285,3 +285,57 @@ function repeatStr(n, s) {
   return s.repeat(n);
 }
 console.log("repeatStr = ", repeatStr(5, "j"));
+
+console.log("*********************");
+console.log("*********************");
+/* Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.*/
+function isTriangle(a, b, c) {
+  return a + b > c && b + c > a && a + c > b ? true : false;
+}
+
+console.log("isTriangle = ", isTriangle(1, 2, 2));
+
+console.log("*********************");
+console.log("*********************");
+/*You might know some pretty large perfect squares. But what about the NEXT one?
+
+Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
+
+If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.*/
+
+function findNextSquare(sq) {
+  return Math.sqrt(sq) % 1 != 0 ? -1 : Math.pow(Math.sqrt(sq) + 1, 2);
+}
+console.log("findNextSquare = ", findNextSquare(121));
+
+console.log("*********************");
+console.log("*********************");
+/*Your task is to write a function maskify, which changes all but the last four characters into '#'.*/
+function maskify(cc) {
+  return cc.substring(0, cc.length - 4).replace(/./g, "#") + cc.slice(-4);
+}
+console.log("maskify = ", maskify("64607935616"));
+
+console.log("*********************");
+console.log("*********************");
+/* Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) */
+function rowSumOddNumbers(n) {
+  return Math.pow(n, 3);
+}
+console.log("rowSumOddNumbers = ", rowSumOddNumbers(42));
+
+console.log("*********************");
+console.log("*********************");
+/*Create a function named divisors/Divisors that takes an integer n > 1 and returns an array with all of the integer's
+ divisors(except for 1 and the number itself), from smallest to largest. If the number is prime return
+  the string '(integer) is prime' (null in C#) (use Either String a in Haskell and Result<Vec<u32>, String> in Rust).*/
+function divisors(integer) {
+  let arr = [];
+  for (let i = 2; i <= integer / 2; i++) {
+    if (integer % i == 0) {
+      arr.push(i);
+    }
+  }
+  return arr.length == 0 ? integer.toString() + " is prime" : arr;
+}
+console.log("divisors = ", divisors(13));
