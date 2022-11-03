@@ -213,9 +213,75 @@ consecutive or non-consecutive. Implement a function
 that determines whether a string that contains only letters is an isogram.
 Assume the empty string is an isogram. Ignore letter case. */
 
-function isIsogram(str){
-    str= str.toLowerCase()
-return str.split("").every((el, i) => str.indexOf(el) == i);
-} 
+function isIsogram(str) {
+  str = str.toLowerCase();
+  return str.split("").every((el, i) => str.indexOf(el) == i);
+}
 
 console.log("isIsogram = ", isIsogram("aba"));
+
+console.log("*********************");
+console.log("*********************");
+/*You get an array of numbers, return the sum of all of the positives ones.
+Example [1,-4,7,12] => 1 + 7 + 12 = 20
+Note: if there is nothing to sum, the sum is default to 0.*/
+function positiveSum(arr) {
+  let sum = arr
+    .filter((el) => el >= 0)
+    .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+  return sum;
+}
+console.log("positiveSum = ", positiveSum([1, -4, 7, 12]));
+
+console.log("*********************");
+console.log("*********************");
+/*
+"ATTGC" --> "TAACG"
+"GTAT" --> "CATA"
+Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
+
+If you want to know more: http://en.wikipedia.org/wiki/DNA
+
+In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". Your function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).*/
+
+function DNAStrand(dna) {
+  let arr = dna.split("");
+  let k = arr.map((el) => {
+    if (el == "A") {
+      el = "T";
+    } else if (el == "T") {
+      el = "A";
+    } else if (el == "G") {
+      el = "C";
+    } else {
+      el = "G";
+    }
+    return el;
+  });
+  return k.join("");
+}
+console.log("DNAStrand = ", DNAStrand("ATTGC"));
+
+console.log("*********************");
+console.log("*********************");
+/* Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.*/
+function descendingOrder(n) {
+  return Number(
+    n
+      .toString()
+      .split("")
+      .map((el) => parseInt(el))
+      .sort()
+      .reverse()
+      .join("")
+  );
+}
+console.log("descendingOrder = ", descendingOrder("16895"));
+
+console.log("*********************");
+console.log("*********************");
+/* Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.*/
+function repeatStr (n, s) {
+    return s.repeat(n);
+  }
+  console.log("repeatStr = ", repeatStr(5,"j"));
