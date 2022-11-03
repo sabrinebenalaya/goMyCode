@@ -496,3 +496,92 @@ function DNAtoRNA(dna) {
     .join("");
 }
 console.log("DNAtoRNA = ", DNAtoRNA("CCAGAGGTT"));
+
+console.log("*********************");
+console.log("*********************");
+/*Given a random non-negative number, you have to return the digits of this number within an array in reverse order.*/
+function digitize(n) {
+  return n
+    .toString()
+    .split("")
+    .map((el) => Number(el))
+    .reverse();
+}
+
+console.log("digitize = ", digitize(0));
+
+console.log("*********************");
+console.log("*********************");
+/*Given an array of ones and zeroes, convert the equivalent binary value to an integer.*/
+const binaryArrayToNumber = (arr) => {
+  let s = 0;
+  let ar = arr.reverse();
+  for (let i = 0; i < ar.length; i++) {
+    s = s + Math.pow(2, i) * ar[i];
+  }
+  return s;
+};
+console.log("binaryArrayToNumber = ", binaryArrayToNumber([0, 0, 0, 1]));
+
+console.log("*********************");
+console.log("*********************");
+/*Write a function findNeedle() that takes an array full of junk but containing one "needle"
+
+After your function finds the needle it should return a message (as a string) that says:*/
+function findNeedle(haystack) {
+  return "found the needle at position " + haystack.indexOf("needle");
+}
+console.log(
+  "findNeedle = ",
+  findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"])
+);
+
+console.log("*********************");
+console.log("*********************");
+/* Given an array of integers, remove the smallest value. Do not mutate the original array/list. 
+If there are multiple elements with the same value, 
+remove the one with a lower index. If you get an empty array/list, return an empty array/list. */
+function removeSmallest(numbers) {
+  return numbers.filter((el, i) => i != numbers.indexOf(Math.min(...numbers)));
+}
+
+console.log("removeSmallest = ", removeSmallest([354, 130, 338, 14, 191, 14]));
+
+console.log("*********************");
+console.log("*********************");
+/*Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).*/
+function countSheeps(arrayOfSheep) {
+  return arrayOfSheep.filter((el) => el == true).length;
+}
+console.log(
+  "countSheeps = ",
+  countSheeps([
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+  ])
+);
+
+console.log("*********************");
+console.log("*********************");
