@@ -384,3 +384,57 @@ function makeNegative(num) {
 }
 
 console.log("makeNegative = ", makeNegative(9));
+
+console.log("*********************");
+console.log("*********************");
+/*Given an array of integers, return a new array with each value doubled.*/
+function maps(x) {
+  return x.map((el) => el * 2);
+}
+console.log("maps = ", maps([1, 2, 3]));
+
+console.log("*********************");
+console.log("*********************");
+/*Given a year, return the century it is in.*/
+function century(year) {
+  return Math.ceil(year / 100);
+}
+
+console.log("century = ", century(89));
+
+console.log("*********************");
+console.log("*********************");
+/*Nathan loves cycling.
+
+Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+
+You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.*/
+function litres(time) {
+  return Math.floor(time * 0.5);
+}
+console.log("litres = ", litres(6.7));
+
+console.log("*********************");
+console.log("*********************");
+/*Your task is to write a function which returns the sum of following series upto nth term(parameter).*/
+function SeriesSum(n) {
+  let k = 0;
+  let sum = 0;
+  let i = 1;
+  while (k < n) {
+    sum = sum + 1 / i;
+    i += 3;
+    k++;
+  }
+  return Number(sum).toFixed(2);
+}
+console.log("SeriesSum = ", SeriesSum(2));
+
+console.log("*********************");
+console.log("*********************");
+/*The function should take three arguments - operation(string/char), value1(number), value2(number).
+The function should return result of numbers after applying the chosen operation.*/
+function basicOp(operation, value1, value2) {
+  return eval(value1 + operation + value2);
+}
+console.log("basicOp = ", basicOp("-", 15, 18));
