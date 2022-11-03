@@ -339,3 +339,48 @@ function divisors(integer) {
   return arr.length == 0 ? integer.toString() + " is prime" : arr;
 }
 console.log("divisors = ", divisors(13));
+
+console.log("*********************");
+console.log("*********************");
+/*We need a function that can transform a number (integer) into a string.*/
+function numberToString(num) {
+  return num.toString();
+}
+console.log("numberToString = ", numberToString(-13));
+
+console.log("*********************");
+console.log("*********************");
+/*Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.*/
+function boolToWord(bool) {
+  return bool ? "Yes" : "No";
+}
+
+console.log("boolToWord = ", boolToWord(false));
+
+console.log("*********************");
+console.log("*********************");
+/* Remove the spaces from the string, then return the resultant string.*/
+function noSpace(x) {
+  // return x.split(" ").filter(el=>el!=="").join('')
+  return x.replace(/ /g, "");
+}
+console.log("noSpace = ", noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"));
+
+console.log("*********************");
+console.log("*********************");
+/*It's pretty straightforward. Your goal is to create a function that removes the first 
+and last characters of a string. You're given one parameter, the original string. 
+You don't have to worry with strings with less than two characters.*/
+function removeChar(str) {
+  return str.substring(1, str.length - 1);
+}
+console.log("removeChar = ", removeChar("eloquent"));
+
+console.log("*********************");
+console.log("*********************");
+/*In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?*/
+function makeNegative(num) {
+  return num < 0 ? Math.abs(num) : -Math.abs(num);
+}
+
+console.log("makeNegative = ", makeNegative(9));
