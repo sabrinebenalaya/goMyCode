@@ -281,7 +281,7 @@ console.log("descendingOrder = ", descendingOrder("16895"));
 console.log("*********************");
 console.log("*********************");
 /* Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.*/
-function repeatStr (n, s) {
-    return s.repeat(n);
-  }
-  console.log("repeatStr = ", repeatStr(5,"j"));
+function repeatStr(n, s) {
+  return s.repeat(n);
+}
+console.log("repeatStr = ", repeatStr(5, "j"));
