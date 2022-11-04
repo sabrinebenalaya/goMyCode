@@ -585,3 +585,96 @@ console.log(
 
 console.log("*********************");
 console.log("*********************");
+/*Your task is to add a new property usersAnswer to every object in the array questions.
+ The value of usersAnswer should be set to null. The solution should work for array of any length.*/
+var questions = [
+  {
+    question: "What's the currency of the USA?",
+    choices: ["US dollar", "Ruble", "Horses", "Gold"],
+    corAnswer: 0,
+  },
+  {
+    question: "Where was the American Declaration of Independence signed?",
+    choices: ["Philadelphia", "At the bottom", "Frankie's Pub", "China"],
+    corAnswer: 0,
+  },
+];
+const question = new Object();
+const questionsChange = questions.map((question) => {
+  question.usersAnswer = null;
+  return question;
+});
+console.log("questionsChange = ", questionsChange);
+
+console.log("*********************");
+console.log("*********************");
+/*Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
+
+If no arguments are given, ball objects should instantiate with a "ball type" of "regular."*/
+
+var Ball = function (ballType) {
+  this.ballType = ballType || "regular";
+};
+
+console.log("*********************");
+console.log("*********************");
+
+/*
+Given two numbers and an arithmetic operator (the name of it, as a string), 
+return the result of the two numbers having that operator used on them.
+
+5, 2, "add"      --> 7
+5, 2, "subtract" --> 3
+5, 2, "multiply" --> 10
+5, 2, "divide"   --> 2.5*/
+function arithmetic(a, b, operator) {
+  let op = "";
+  if (operator === "add") {
+    op = "+";
+  } else if (operator === "subtract") {
+    op = "-";
+  } else if (operator === "multiply") {
+    op = "*";
+  } else {
+    op = "/";
+  }
+
+  return eval(a + op + b);
+}
+console.log("arithmetic = ", arithmetic(5, 2, "add"));
+
+console.log("*********************");
+console.log("*********************");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
