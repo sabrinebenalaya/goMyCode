@@ -645,36 +645,59 @@ console.log("arithmetic = ", arithmetic(5, 2, "add"));
 
 console.log("*********************");
 console.log("*********************");
+/*Create a function which answers the question "Are you playing banjo?".
+If your name starts with the letter "R" or lower case "r", you are playing banjo!
 
+The function takes a name as its only argument, and returns one of the following strings:
+name + " plays banjo" 
+name + " does not play banjo" */
+function areYouPlayingBanjo(name) {
+  return /r/i.test(name[0])
+    ? name + " plays banjo"
+    : name + " does not play banjo";
+}
+console.log("areYouPlayingBanjo = ", areYouPlayingBanjo("Radd"));
 
+console.log("*********************");
+console.log("*********************");
 
+/*You take your son to the forest to see the monkeys. You know that there are a certain number there (n),
+ but your son is too young to just appreciate the full number, he has to start counting them from 1.
 
+As a good parent, you will sit and count with him. Given the number (n), 
+populate an array with all numbers up to and including that number, but excluding zero.*/
+function monkeyCount(n) {
+  let arr = [];
+  for (let i = 1; i <= n; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
+console.log("monkeyCount = ", monkeyCount(5));
 
+console.log("*********************");
+console.log("*********************");
+/*Jenny has written a function that returns a greeting for a user. 
+However, she's in love with Johnny, and would like to greet him slightly different. 
+She added a special case to her function, but she made a mistake.*/
 
+function greet(name) {
+  return name === "Johnny" ? "Hello, my love!" : "Hello, " + name + "!";
+}
+console.log("greet = ", greet("Johnny"));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log("*********************");
+console.log("*********************");
+/*Write a program that finds the summation of every number from 1 to num. 
+The number will always be a positive integer greater than 0.*/
+var summation = function (num) {
+    let s =0
+    for (let i=1; i<=num;i++){
+        s+=i
+    }
+    return s
+  }
+console.log("summation = ", summation(2));
 
 
 
