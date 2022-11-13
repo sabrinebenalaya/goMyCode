@@ -11,7 +11,7 @@ function LearnCard() {
       <Card.Body>
         <Card.Title>Learne react with GoMyCode</Card.Title>
         <Card.Text>
-          We are here to assiste you and suport you. So, don't think twice to
+          We are here to assist you and support you. So, don't think twice to
           contact us.
         </Card.Text>
         <Button variant="primary">Contact Us</Button>
