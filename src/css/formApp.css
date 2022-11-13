@@ -1,0 +1,17 @@
+
+.containerForm{
+  width: 40%;
+  margin-top: 10px;
+  background-color: blue;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 50px 50px ;
+  }
+
+  .smallText{
+    color:"white";
+    font-weight:"lighter";
+    text-align:"left";
+  }

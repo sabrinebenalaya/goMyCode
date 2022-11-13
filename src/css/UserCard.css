@@ -1,0 +1,7 @@
+.UsersProfil{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(237, 235, 235);
+    margin-bottom: 40px;
+}

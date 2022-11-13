@@ -1,0 +1,7 @@
+#divBody{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: red;
+  padding: 2%;
+  height: 100px;
+}
