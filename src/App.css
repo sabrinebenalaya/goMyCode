@@ -1,0 +1,44 @@
+.grayDiv {
+  background-color: gray;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.whiteDiv {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.iconDiv {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+}
+.iconDiv img{
+  width: 30px;
+  margin-right: 15px;
+}
+
+.bleuDiv {
+  display: flex;
+  flex-direction: column;
+  background-color: #112031;
+  border-radius: 20px;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  width: 100%;
+}
+.containerDiv {
+  display: flex;
+  flex-direction: row;
+ width: 100%;
+}
+.containerUnit{
+  display: flex;
+  flex-direction: column;
+  margin-right: 2%;
+  justify-content: space-around;
+  width: 50%;
+}

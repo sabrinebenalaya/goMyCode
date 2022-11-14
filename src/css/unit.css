@@ -1,0 +1,14 @@
+
+.invisible-scrollbar{
+  display: block;
+  width:100%;
+  overflow: auto;
+  height: 300px;
+  margin-top: 2%;
+}
+
+.invisible-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #aaa;
+}
