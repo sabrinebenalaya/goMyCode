@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+}
+.containerMovie {
+  width: 300px;
+  margin: 10px;
+}
+
+.navBar {
+  background-color: #e9ecef;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.search {
+  width: 10%;
+  margin-right: 5px;
+}
+
