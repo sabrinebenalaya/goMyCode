@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Component/Home";
 import Data from "./res/Data";
 import DetailMovie from "./Component/DetailMovie";
-import PaginatedItems from "./Component/X.js";
+import PaginatedItems from "./Component/PaginatedMovis.js";
 
 function App() {
   const [text, setText] = useState("");
@@ -25,16 +25,12 @@ function App() {
           setText={setText}
           setRate={setRate}
           addHandelMovie={addHandelMovie}
-          text={text}
-          rate={rate}
+        text={text} rate={rate}
         />
       ),
     },
     { path: "/movie/:movieId", element: <DetailMovie movieList={movieList} /> },
-    {
-      path: "/x",
-      element:   <PaginatedItems  itemsPerPage={2}  /> ,
-    },
+   
   ];
   const router = createBrowserRouter(routes);
   return (

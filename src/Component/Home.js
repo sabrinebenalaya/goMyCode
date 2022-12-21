@@ -1,14 +1,13 @@
 import React from "react";
-import ListOfMovis from "./ListOfMovis";
 import SearchBar from "./SearchBar";
+import PaginatedMovis from "./PaginatedMovis";
 
 function Home({
   movieList,
   setText,
   setRate,
   addHandelMovie,
-  text,
-  rate,
+  text, rate
  
 }) {
   return (
@@ -18,12 +17,8 @@ function Home({
         setRate={setRate}
         addHandelMovie={addHandelMovie}
       />
-      <ListOfMovis
-        movieList={movieList}
-        text={text}
-        rate={rate}
-     
-      />
+   
+      <PaginatedMovis  itemsPerPage={2} movieList={movieList}  text={text} rate={rate} />
     </>
   );
 }
