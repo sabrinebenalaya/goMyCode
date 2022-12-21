@@ -1,25 +1,46 @@
-import React, { useState } from "react";
-import Data from "./res/Data";
+import React, { useState, useEffect } from "react";
 import "./res/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SearchBar from "./Component/SearchBar";
-import ListOfMovis from "./Component/ListOfMovis";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Component/Home";
+import Data from "./res/Data";
+import DetailMovie from "./Component/DetailMovie";
+import PaginatedItems from "./Component/X.js";
 
 function App() {
+  const [text, setText] = useState("");
+  const [rate, setRate] = useState(0);
   const [movieList, SetMovieList] = useState(Data);
 
-const [text, setText]= useState('')
-const [rate, setRate]=useState(0)
-const addHandelMovie =(movie)=>{
-SetMovieList([...movieList, movie])
+  const addHandelMovie = (movie) => {
+    SetMovieList([...movieList, movie]);
+  };
 
-}
+  const routes = [
+    {
+      path: "/",
+      element: (
+        <Home
+          movieList={movieList}
+          setText={setText}
+          setRate={setRate}
+          addHandelMovie={addHandelMovie}
+          text={text}
+          rate={rate}
+        />
+      ),
+    },
+    { path: "/movie/:movieId", element: <DetailMovie movieList={movieList} /> },
+    {
+      path: "/x",
+      element:   <PaginatedItems  itemsPerPage={2}  /> ,
+    },
+  ];
+  const router = createBrowserRouter(routes);
   return (
     <>
-      <SearchBar text={setText} setRate={setRate} addHandelMovie={addHandelMovie}/>
-      <ListOfMovis movieList={movieList} text={text} rate={rate}/>
+      <RouterProvider router={router} />
     </>
   );
 }
-
 export default App;

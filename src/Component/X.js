@@ -1,3 +1,7 @@
+import ListOfMovis from "./ListOfMovis";
+import { useState } from "react";
+import ReactPaginate from "react-paginate";
+//
 const Data = [
   {
     id: "1",
@@ -6,8 +10,7 @@ const Data = [
     decription:
       "Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.",
     rate: 2,
-    bdAnonce : "https://www.youtube.com/embed/k10ETZ41q5o",
-
+    bdAnonce: "https://www.youtube.com/embed/k10ETZ41q5o",
   },
   {
     id: "2",
@@ -16,7 +19,7 @@ const Data = [
       "https://aws-cf.imdoc.fr/prod/photos/8/6/1/11904861/29176577/big-29176577abb.jpg?v=2",
     decription: "The Ring is a 2002 American supernatural horror film",
     rate: 3,
-    bdAnonce : "https://www.youtube.com/embed/O2NKzO-fxwQ",
+    bdAnonce: "https://www.youtube.com/embed/O2NKzO-fxwQ",
   },
   {
     id: "3",
@@ -50,7 +53,7 @@ const Data = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0hYUlSTUgCxfY-8ACz_E3CQWDKShEYEvGFw&usqp=CAU",
     decription: "The Ring is a 2002 American supernatural horror film",
     rate: 3,
-    bdAnonce:"https://www.youtube.com/embed/9O1Iy9od7-A",
+    bdAnonce: "https://www.youtube.com/embed/9O1Iy9od7-A",
   },
   {
     id: "7",
@@ -58,7 +61,7 @@ const Data = [
     poster: "https://m.media-amazon.com/images/I/51CbCQNMyiL._AC_.jpg",
     decription: "The Ring is a 2002 American supernatural horror film",
     rate: 2,
-    bdAnonce:"https://www.youtube.com/embed/EXeTwQWrcwY",
+    bdAnonce: "https://www.youtube.com/embed/EXeTwQWrcwY",
   },
   {
     id: "8",
@@ -66,7 +69,42 @@ const Data = [
     poster: "https://m.media-amazon.com/images/I/81zZhjymV7L._AC_SL1500_.jpg",
     decription: "The Ring is a 2002 American supernatural horror film",
     rate: 4,
-    bdAnonce:"https://www.youtube.com/embed/TEN-2uTi2c0",
+    bdAnonce: "https://www.youtube.com/embed/TEN-2uTi2c0",
   },
 ];
-export default Data;
+
+//
+
+function PaginatedItems({ itemsPerPage }) {
+  const [itemOffset, setItemOffset] = useState(0);
+
+  const endOffset = itemOffset + itemsPerPage;
+  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  const currentItems = Data.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(Data.length / itemsPerPage);
+
+  // Invoke when user click to request another page.
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % Data.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  };
+
+  return (
+    <>
+      <ListOfMovis currentItems={currentItems} />
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel="next >"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={pageCount}
+        previousLabel="< previous"
+        renderOnZeroPageCount={null}
+      />
+    </>
+  );
+}
+export default PaginatedItems;

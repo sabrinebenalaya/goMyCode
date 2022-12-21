@@ -11,7 +11,7 @@ function AddMovie({ addHandelMovie }) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Add Movie{" "}
+        Add Movie
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -19,8 +19,10 @@ function AddMovie({ addHandelMovie }) {
           <Modal.Title>Adding Movie</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {" "}
-          <FormAddMovie addHandelMovie={addHandelMovie} handleClose={handleClose}/>
+          <FormAddMovie
+            addHandelMovie={addHandelMovie}
+            handleClose={handleClose}
+          />
         </Modal.Body>
       </Modal>
     </>

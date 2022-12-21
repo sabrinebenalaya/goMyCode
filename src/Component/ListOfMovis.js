@@ -1,20 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Film from "./Film";
+import Data from "../res/Data";
 
-function ListOfMovis({ movieList, text, rate }) {
+function ListOfMovis({ movieList, text, rate, currentItems }) {
   return (
-    <div className="container">
-      {movieList
-        .filter(
-          (movie) =>
-          movie.title.toUpperCase().includes(text.toUpperCase()) &&
-            movie.rate >= rate
-        )
-
-        .map((movie) => (
-          <Film key={movie.id} movie={movie} />
+    <>
+      <div className="container">
+        {currentItems.map((movie) => (
+          <Link to={`/movie/${movie.id}`}>
+            <Film key={movie.id} movie={movie} />
+          </Link>
         ))}
-    </div>
+      </div>
+    </>
   );
 }
 

@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   margin: 0;
@@ -19,5 +20,29 @@
 .search {
   width: 10%;
   margin-right: 5px;
+  margin-left: 20px;
+}
+.abc {
+  display: flex;
+  flex-direction: column;
 }
 
+.detailMovie {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.leftDiv {
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px;
+}
+.leftDiv img {
+  width: 100%;
+  height: 500px;
+  padding: 10px;
+}
+.rightDiv {
+  width: 70%;
+}
