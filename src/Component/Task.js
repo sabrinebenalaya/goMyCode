@@ -28,8 +28,6 @@ function Task({ task }) {
     dispatch(updateTask(task.id, text));
     handleClose();
   };
-let x =  task.done=== true ? 'checked' :' ';
-console.log("x=",x)
   return (
     <>
       <div>
