@@ -28,4 +28,8 @@
     padding: 20px;
     margin-top: 50px;
 }
-
+.taskesDone{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

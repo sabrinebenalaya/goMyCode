@@ -5,34 +5,41 @@ import Modal from "react-bootstrap/Modal";
 
 import "../CSS/TaskCard.css";
 
-function Task({ task, deleteTask, doneAndundone, updateTask }) {
-  const HandelDeleteTask = () => deleteTask(task);
-  const handelDone = () => doneAndundone(task.id);
+import { useDispatch } from "react-redux";
+import { deleteTask, doneAndundone, updateTask } from "../Redux/Actions";
+
+function Task({ task }) {
   const [show, setShow] = useState(false);
   const [text, setText] = useState();
+
+  const dispatch = useDispatch();
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handelChange = (e) => {
-    let newtext = e.target.value;
-    setText(newtext);
-  };
+  const HandelDeleteTask = () => dispatch(deleteTask(task));
+
+  const handelDone = () => dispatch(doneAndundone(task.id));
+
+  const handelChange = (e) => setText(e.target.value);
+
   const handleUpdate = (e) => {
     handelChange(e);
-    updateTask(text, task.id);
+    dispatch(updateTask(task.id, text));
     handleClose();
   };
-
+let x =  task.done=== true ? 'checked' :' ';
+console.log("x=",x)
   return (
     <>
       <div>
         <Card className="cart taskCart">
           <Card.Body>
             <h1 style={{ textDecoration: task.done ? "line-through" : "none" }}>
-              {task.taskText}
+              {task.description}
             </h1>
             <div>
-              <input type="checkbox" onClick={handelDone} />
+              <input   type="checkbox" onChange={handelDone}   />
               <label> Done</label>
             </div>
             <div>
@@ -54,7 +61,7 @@ function Task({ task, deleteTask, doneAndundone, updateTask }) {
         <Modal.Body>
           <input
             type="text"
-            placeholder={task.taskText}
+            placeholder={task.description}
             onChange={handelChange}
           />
         </Modal.Body>
