@@ -1,0 +1,12 @@
+.cardUser{
+  background-color: beige;
+  border-radius: 10px;
+  border-color: black;
+  margin: 5px;
+  padding: 5px;
+}
+.containerList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
